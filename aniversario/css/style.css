@@ -1,0 +1,782 @@
+/* CONFIGURACIÓN GENERAL*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    overflow: hidden;
+    background: #fff5f7;
+}
+
+
+/* PANTALLAS*/
+
+.pantalla {
+    position: fixed;
+
+    width: 100%;
+    height: 100vh;
+
+    top: 0;
+    left: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(1.05);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0.8s;
+
+    overflow-y: auto;
+}
+
+
+/* Pantalla activa */
+
+.pantalla.activa {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+
+    z-index: 10;
+}
+
+
+/* PANTALLA 1*/
+
+.pantalla-inicio {
+
+    background:
+        radial-gradient(
+            circle at top,
+            #ffe3ea,
+            #fff5f7 50%,
+            #f8dce3
+        );
+}
+
+
+.contenido-inicio {
+
+    width: 90%;
+
+    max-width: 650px;
+
+    animation: aparecer 1.5s ease;
+}
+
+
+.corazon {
+
+    font-size: 70px;
+
+    color: #c94b67;
+
+    animation: latido 1.5s infinite;
+
+    margin-bottom: 20px;
+}
+
+
+.contenido-inicio h1 {
+
+    font-size: clamp(42px, 8vw, 75px);
+
+    color: #8f3049;
+
+    margin-bottom: 25px;
+
+    font-weight: normal;
+}
+
+
+.mensaje-inicio {
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    color: #6d4a53;
+
+    margin-bottom: 40px;
+}
+
+
+/*BOTÓN PRINCIPAL*/
+
+.boton-principal {
+
+    border: none;
+
+    padding: 16px 38px;
+
+    border-radius: 50px;
+
+    background: #b83d5a;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(130, 40, 65, 0.25);
+
+    transition: all 0.3s ease;
+}
+
+
+.boton-principal:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 30px rgba(130, 40, 65, 0.35);
+
+    background: #a5324e;
+}
+
+
+/*PANTALLA 2*/
+
+.pantalla-recuerdos {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff6f8,
+            #fbe1e7
+        );
+
+    padding: 30px 20px;
+}
+
+
+.contenedor-recuerdos {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: auto;
+
+    padding: 30px 0;
+}
+
+
+.contenedor-recuerdos h2 {
+
+    font-size: clamp(30px, 6vw, 48px);
+
+    font-weight: normal;
+
+    color: #8f3049;
+
+    margin-bottom: 25px;
+}
+
+
+/*MARCO DE FOTOS*/
+
+.marco-fotos {
+
+    width: min(80vw, 430px);
+
+    height: min(58vw, 330px);
+
+    margin: 0 auto 30px;
+
+    padding: 14px;
+
+    background: #fff;
+
+    border: 10px solid #c58b96;
+
+    box-shadow:
+        0 15px 35px rgba(80, 30, 40, 0.25);
+
+    position: relative;
+}
+
+
+.marco-fotos::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -18px;
+
+    border: 2px solid #dfb0ba;
+
+    pointer-events: none;
+}
+
+
+.foto-contenedor {
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #eee;
+}
+
+
+.foto-contenedor img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+.foto-contenedor img.cambiando {
+
+    opacity: 0;
+
+    transform: scale(1.05);
+}
+
+
+/*MENSAJE DE RECUERDOS*/
+
+.mensaje-recuerdos {
+
+    max-width: 600px;
+
+    margin: 0 auto 25px;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    color: #674952;
+}
+
+
+/*BOTÓN CARTA*/
+
+.boton-carta {
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 0 auto;
+
+    font-family: inherit;
+}
+
+
+.sobre {
+
+    width: 85px;
+
+    height: 65px;
+
+    position: relative;
+
+    background: #c94b67;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 8px 20px rgba(100, 30, 50, 0.25);
+
+    transition: transform 0.3s ease;
+}
+
+
+.boton-carta:hover .sobre {
+
+    transform:
+        translateY(-5px)
+        rotate(-2deg);
+}
+
+
+.solapa {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 0;
+
+    height: 0;
+
+    border-left: 42px solid transparent;
+
+    border-right: 42px solid transparent;
+
+    border-top: 35px solid #e27a91;
+
+}
+
+
+.corazon-carta {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 32px;
+
+    transform: translateX(-50%);
+
+    color: white;
+
+    font-size: 20px;
+}
+
+
+.texto-boton {
+
+    color: #8f3049;
+
+    font-size: 18px;
+}
+
+
+/*CARTA*/
+
+.carta {
+
+    max-height: 0;
+
+    opacity: 0;
+
+    overflow: hidden;
+
+    transition:
+        max-height 1s ease,
+        opacity 0.8s ease;
+
+    margin-top: 25px;
+}
+
+
+.carta.abierta {
+
+    max-height: 900px;
+
+    opacity: 1;
+}
+
+
+.papel-carta {
+
+    background: #fffdf8;
+
+    width: min(90vw, 620px);
+
+    margin: auto;
+
+    padding: 40px 35px;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 15px 40px rgba(80, 40, 40, 0.18);
+
+    border: 1px solid #ead7d0;
+
+    position: relative;
+
+    animation: cartaAparecer 0.8s ease;
+}
+
+
+.adorno-carta {
+
+    color: #c94b67;
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+
+.papel-carta h3 {
+
+    font-size: 32px;
+
+    color: #8f3049;
+
+    font-weight: normal;
+
+    margin-bottom: 25px;
+}
+
+
+.texto-carta {
+
+    text-align: left;
+
+    color: #59434a;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+}
+
+
+.texto-carta p {
+
+    margin-bottom: 18px;
+}
+
+
+/*BOTÓN FINAL*/
+
+.boton-final {
+
+    margin-top: 25px;
+
+    padding: 14px 30px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #b83d5a;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+.boton-final:hover {
+
+    transform: translateY(-3px);
+
+    background: #9f304b;
+}
+
+
+/*PANTALLA 3*/
+
+.pantalla-final {
+
+    background:
+        radial-gradient(
+            circle,
+            #ffe9ee,
+            #f8d7df
+        );
+
+    padding: 30px 20px;
+}
+
+
+.contenido-final {
+
+    width: 90%;
+
+    max-width: 700px;
+
+    animation: finalAparecer 1.5s ease;
+}
+
+
+.corazones-finales {
+
+    color: #c94b67;
+
+    font-size: 25px;
+
+    letter-spacing: 10px;
+
+    margin-bottom: 25px;
+}
+
+
+.contenido-final h1 {
+
+    font-size: clamp(38px, 8vw, 70px);
+
+    line-height: 1.2;
+
+    font-weight: normal;
+
+    color: #8f3049;
+
+    margin-bottom: 25px;
+}
+
+
+.mensaje-final {
+
+    font-size: 21px;
+
+    line-height: 1.8;
+
+    color: #65444d;
+
+    margin-bottom: 30px;
+}
+
+
+/*FOTO FINAL*/
+
+.foto-final {
+
+    width: min(75vw, 360px);
+
+    height: min(75vw, 360px);
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    padding: 10px;
+
+    background: white;
+
+    box-shadow:
+        0 15px 40px rgba(80, 30, 40, 0.25);
+
+    animation: fotoFinal 1.5s ease;
+}
+
+
+.foto-final img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+
+.frase-final {
+
+    margin-top: 25px;
+
+    font-size: 28px;
+
+    color: #a83450;
+}
+
+
+/*ANIMACIONES*/
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+}
+
+
+@keyframes latido {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.15);
+
+    }
+}
+
+
+@keyframes cartaAparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-20px)
+            scale(0.95);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+}
+
+
+@keyframes finalAparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(0.9);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+}
+
+
+@keyframes fotoFinal {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(0.5)
+                   rotate(-10deg);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1)
+                   rotate(0);
+
+    }
+}
+
+
+/*CELULAR*/
+
+@media (max-width: 600px) {
+
+    .pantalla-recuerdos {
+
+        align-items: flex-start;
+
+    }
+
+    .contenedor-recuerdos {
+
+        padding-top: 20px;
+
+    }
+
+    .marco-fotos {
+
+        width: 82vw;
+
+        height: 55vw;
+
+        border-width: 7px;
+
+    }
+
+    .mensaje-recuerdos {
+
+        font-size: 17px;
+
+        padding: 0 15px;
+
+    }
+
+    .papel-carta {
+
+        padding: 30px 23px;
+
+    }
+
+    .texto-carta {
+
+        font-size: 16px;
+
+    }
+
+    .contenido-final h1 {
+
+        font-size: 42px;
+
+    }
+
+    .mensaje-final {
+
+        font-size: 18px;
+
+    }
+
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Un año contigo</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!--PANTALLA 1 - BIENVENIDA-->
+
+    <section id="pantalla1" class="pantalla pantalla-inicio">
+
+        <div class="contenido-inicio">
+
+            <div class="corazon">♥</div>
+
+            <h1>Un año contigo</h1>
+
+            <p class="mensaje-inicio">
+                Tengo algo especial que quiero mostrarte...
+            </p>
+
+            <button
+                class="boton-principal"
+                onclick="mostrarPantalla2()">
+
+                Presiona aquí
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!--PANTALLA 2 - FOTOS Y CARTA-->
+
+    <section id="pantalla2" class="pantalla pantalla-recuerdos">
+
+        <div class="contenedor-recuerdos">
+
+            <h2>Nuestros recuerdos</h2>
+
+            <!-- MARCO DE FOTOS -->
+
+            <div class="marco-fotos">
+
+                <div class="foto-contenedor">
+
+                    <img
+                        id="fotoActual"
+                        src="img/A1.jpg"
+                        alt="Nuestro recuerdo">      
+
+                </div>
+
+            </div>
+
+
+            <!-- MENSAJE -->
+
+            <p class="mensaje-recuerdos">
+                Cada momento contigo se ha convertido
+                en un recuerdo que quiero guardar para siempre.
+            </p>
+
+
+            <!-- BOTÓN CARTA -->
+
+            <button
+                class="boton-carta"
+                onclick="abrirCarta()">
+
+                <span class="sobre">
+
+                    <span class="solapa"></span>
+
+                    <span class="corazon-carta">
+                        ♥
+                    </span>
+
+                </span>
+
+                <span class="texto-boton">
+                    Pulsa aquí
+                </span>
+
+            </button>
+
+
+            <!-- CARTA -->
+
+            <div
+                id="carta"
+                class="carta">
+
+                <div class="papel-carta">
+
+                    <div class="adorno-carta">
+                        ♥
+                    </div>
+
+                    <h3>Para ti</h3>
+
+                    <div class="texto-carta">
+
+                        <p>
+                             Sigo sin creer que tengo una persona como tú a mi lado, te agradezco por todos los momentos que van y por todos los que vienen.
+                              Eres la mejor compañera de vida.
+                        </p>
+
+                        <p>
+                            Hoy celebro contigo algo que es más grande que una fecha: celebro la suerte de haberte encontrado en este mundo inmenso, 
+                            la dicha de compartir la vida con alguien que me hace reír, pensar, crecer y sentir el amor de una forma tan hermosa.
+                            A veces pienso en todo lo que hemos vivido juntos, en los días buenos que se pasaron volando y en los difíciles que supimos atravesar de la mano. 
+                            Y entonces lo entiendo: lo nuestro no es casualidad, es elección. Cada abrazo, cada conversación, cada paso que damos... es una forma de seguir eligiéndonos.
+                        </p>
+
+                        <p>
+                           Feliz aniversario, amor mío.
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="boton-final"
+                        onclick="mostrarPantalla3()">
+
+                        Di que si
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--PANTALLA 3 - MENSAJE FINAL-->
+
+    <section
+        id="pantalla3"
+        class="pantalla pantalla-final">
+
+        <div class="contenido-final">
+
+            <div class="corazones-finales">
+                ♥ ♥ ♥
+            </div>
+
+            <h1>
+                Ahora tenemos una cita el 14/09/2026
+            </h1>
+
+            <p class="mensaje-final">
+
+                Y espero que este sea solamente
+                el primero de muchos años juntos.
+
+            </p>
+
+
+            <!-- FOTO FINAL -->
+
+            <div class="foto-final">
+
+                <img
+                    src="img/A2.jpg"
+                    alt="Nuestro momento especial">
+
+            </div>
+
+
+            <p class="frase-final">
+                Te amo.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
